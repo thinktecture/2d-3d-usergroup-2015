@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
+    
     <head>
         <title>.NET UserGroup Karlsruhe 2D Example</title>
-        <meta charset="UTF-8"/>
+        <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style type="text/css">
             canvas {
@@ -10,15 +11,30 @@
             }
         </style>
     </head>
-    <body>
-        <canvas height="500" width="400" id="exampleCanvas">
-            Your browser does not support canvas. :(
-        </canvas>
-    </body>
     
+    <body>
+        <canvas height="500" width="400" id="exampleCanvas">Your browser does not support canvas. :(</canvas>
+    </body>
     <script src="dist/lib.js"></script>
     <script>
         /// <reference path="dist/definitions.js" />
+        
+        var hash = location.hash;
+        
+        if (!hash) {
+            hash = 'example1';
+        }
+        else {
+            hash = hash.substr(1);
+        }
+       
+        var examples = {
+            example1: Example1,
+            example2: Example2,
+            example3: Example3,
+            example4: Example4,
+            example5: Example5
+        };
         
         /**
          * @type {HTMLCanvasElement}
@@ -26,12 +42,18 @@
         var exampleCanvas;
         exampleCanvas = document.getElementById('exampleCanvas');
         
-        var example = new Example5(exampleCanvas);
-        example.draw();
+        var ctor = examples[hash];
         
-        // For animations
-        if (example.start) {
-            example.start();
+        if (ctor) {
+            var example = new ctor(exampleCanvas);
+             
+            example.draw();
+            
+            // For animations
+            if (example.start) {
+                example.start();
+            }
         }
     </script>
+
 </html>
