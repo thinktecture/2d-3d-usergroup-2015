@@ -1,0 +1,30 @@
+{
+  "name": "TTDotNetUserGroupKA2D",
+  "version": "1.0.0",
+  "description": "Examples for the .NET UserGroup in Karlsruhe",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ManuelRauber/DotNetUserGroupKA2015"
+  },
+  "keywords": [
+    "2D",
+    "Canvas",
+    "Touch",
+    "HammerJS"
+  ],
+  "author": "Manuel Rauber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ManuelRauber/DotNetUserGroupKA2015/issues"
+  },
+  "homepage": "https://github.com/ManuelRauber/DotNetUserGroupKA2015",
+  "devDependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-typescript": "^2.7.3",
+    "merge2": "^0.3.5"
+  }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>.NET UserGroup Karlsruhe 2D Example</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type="text/css">
+            canvas {
+                border: 1px solid #000000;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas height="500" width="400" id="exampleCanvas">
+            Your browser does not support canvas. :(
+        </canvas>
+    </body>
+    
+    <script src="dist/lib.js"></script>
+    <script>
+        /// <reference path="dist/definitions.js" />
+        
+        /**
+         * @type {HTMLCanvasElement}
+         */
+        var exampleCanvas;
+        exampleCanvas = document.getElementById('exampleCanvas');
+        
+        var example = new Example4(exampleCanvas);
+        example.draw();
+        
+        // For animations
+        if (example.start) {
+            example.start();
+        }
+    </script>
+</html>
