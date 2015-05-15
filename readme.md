@@ -21,7 +21,8 @@ The examples are written in TypeScript and will be compiled to ES5 using gulp. T
 1. Point your terminal to the 2D subfolder.
 2. Execute `npm install` to install all necessary packages.
 3. Execute `node_modules/.bin/gulp` to start the default gulp task, which will compile the *.ts files, concat them into a single file and outputs it to the dist folder. Sourcemaps are generated, too.
-4. Open index.html in your browser
+4. Optional: Execute `node_modules/.bin/tsd reinstall --save --overwrite` to install type definitions for better intellisense.
+5. Open index.html in your browser
 
 By using hashes you can switch, which example will be used for rendering: 
 
@@ -33,9 +34,13 @@ By using hashes you can switch, which example will be used for rendering:
 
 * http://www.html5rocks.com/en/ A lot of tutorials about HTML5
 * http://www.html5rocks.com/en/search?q=canvas Canvas related articles, tutorials, ...
+* http://www.html5rocks.com/en/tutorials/canvas/performance/ Canvas performance
 * https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D CanvasRendingContext2D API
-* https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame MDN RequestAnimationFrame
+* https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame MDN requestAnimationFrame
 * http://www.w3.org/TR/2dcontext/ 2D API specification
+* https://developer.mozilla.org/en-US/docs/Games/Anatomy Good overview about animations and the loop
+* https://gist.github.com/paulirish/1579671 Example for a requestAnimationFrame polyfill
+* http://gafferongames.com/game-physics/fix-your-timestep/ Time based animations
 
 # Interesting projects
 

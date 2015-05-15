@@ -79,14 +79,14 @@ class Example5 {
 
         this._context.restore();
     }
-    
+
     private bounceCircle(): void {
         
         // Will the next move hit our boundaries? If yes, revert the direction
         if (this._circleX + this._circleRadius > this._width || this._circleX - this._circleRadius < 0) {
             this._moveX *= -1;
         }
-        
+
         if (this._circleY + this._circleRadius > this._height || this._circleY - this._circleRadius < 0) {
             this._moveY *= -1;
         }
@@ -96,23 +96,57 @@ class Example5 {
         this._circleY += this._moveY;
     }
 
+    private getPerformanceTime(): number {
+        if (!window.performance) {
+            return new Date().getTime();
+        }
+
+        return window.performance.now();
+    }
+
     public start(): void {
         // Save the reference, so we can use it inside the animation frame
         var that = this;
         
-        var animationFrame = function() {
+        // Get the current tick 
+        var lastTick;
+        
+        // constant delta time (we calculate 60 fps)
+        var deltaTime = 1000 / 60;
+        
+        // Accumulates the passed time, so we can decide when to apply the 'physics' (aka calculate new bouncing positions)
+        var accumulator = 0;
+
+        var animationFrame = function(timestamp: number) {
+            if (!lastTick) {
+                lastTick = timestamp;
+            }
+            
             // Clear the area at first
             // The easy version is to the clear complete context by
             // that._context.clearRect(0, 0, that._width, that._height);
             // For demonstration we clear only the circle itself
             that._context.clearRect(that._circleX - that._circleRadius, that._circleY - that._circleRadius,
                 that._circleRadius * 2, that._circleRadius * 2);
+
+            // Calculate how much time has passed since the current frame and the last one            
+            var passed = timestamp - lastTick;
             
-            // Calculate the new position
-            that.bounceCircle();
+            // Set current frame as last frame
+            lastTick = timestamp;
+
+            // Add the passed time to the accumulator            
+            accumulator += passed;
+
+            // If the accumulator is >= delta time, we need to update the 'physics'            
+            while (accumulator >= deltaTime) {
+                // Calculate the new position
+                that.bounceCircle();
+                accumulator -= deltaTime;
+            }
             
             that.draw();
-
+            
             // Request another frame
             // We have an infinite loop now
             window.requestAnimationFrame(animationFrame);

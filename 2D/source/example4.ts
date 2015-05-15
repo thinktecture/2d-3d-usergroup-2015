@@ -112,7 +112,7 @@ class Example4 {
             that.bounceCircle();
             
             that.draw();
-
+           
             // Request another frame
             // We have an infinite loop now
             window.requestAnimationFrame(animationFrame);
