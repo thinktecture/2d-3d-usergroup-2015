@@ -15,6 +15,7 @@ All 2D examples are consecutively built. Example1 is the base, Example2 is Examp
 5. Example: Time-based animations
 6. Example: Mouse Move
 7. Example: Touch Move
+8. Example: Manipulating a rectangle with HammerJS
 
 ## Build
 
@@ -34,6 +35,7 @@ By using query parameters you can switch, which example will be used for renderi
 
 # Resources
 
+* http://hammerjs.github.io/ Library for touch and gestures
 * http://www.html5rocks.com/en/ A lot of tutorials about HTML5
 * http://www.html5rocks.com/en/search?q=canvas Canvas related articles, tutorials, ...
 * http://www.html5rocks.com/en/tutorials/canvas/performance/ Canvas performance
