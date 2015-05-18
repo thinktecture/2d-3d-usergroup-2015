@@ -12,7 +12,6 @@ var distFolder = 'dist';
    
 var tsProject = ts.createProject({
     declarationFiles: true,
-    sourceRoot: sourceFolder,
     target: 'ES5'
 });
    
