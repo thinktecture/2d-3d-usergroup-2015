@@ -15,6 +15,9 @@ class Example8 {
     private _rectHeight: number;
     private _lastRectX: number;
     private _lastRectY: number;
+    private _lastRectWidth: number;
+    private _lastRectHeight: number;
+    private _direction: number;
     
     /**
      * Will be set to true, when rectangle can be manipulated.
@@ -56,12 +59,58 @@ class Example8 {
         hammer.on('panend', function(event) {
             that.handlePanEnd(event);
         });
+        
+        hammer.add(new Hammer.Pinch());
+        
+        hammer.on('pinchstart', function(event) {
+            that.handlePinchStart(event);
+        });
+        
+        hammer.on('pinchmove', function(event) {
+            that.handlePinchMove(event);
+        });
+        
+        hammer.on('pinchend', function(event) {
+            that.handlePinchEnd(event);
+        });
+    }
+    
+    private isHit(e: HammerInput): boolean {
+        // Only allow manipulation when the user touched the rect
+        return e.center.x >= this._rectX && e.center.x <= this._rectX + this._rectWidth
+            && e.center.y >= this._rectY && e.center.y <= this._rectY + this._rectHeight;
+    }
+    
+    private handlePinchStart(e: HammerInput): void {
+        // Don't hit test pinch event. If rectangle is too small, we never can hit it. 
+        this._lastRectHeight = this._rectHeight;
+        this._lastRectWidth = this._rectWidth;
+    }
+    
+    private handlePinchMove(e: HammerInput): void {
+        if (!this._direction) {
+            this._direction = e.direction;
+        }
+        
+        //var direction = parseInt(e.offsetDirection, 10);
+        var direction = this._direction;
+        
+        if (direction === Hammer.DIRECTION_DOWN || direction === Hammer.DIRECTION_UP) {
+            this._rectHeight = this._lastRectHeight * e.scale;
+        }
+        
+        if (direction === Hammer.DIRECTION_LEFT || direction === Hammer.DIRECTION_RIGHT) {
+            this._rectWidth = this._lastRectWidth * e.scale;
+        }
+    }
+    
+    private handlePinchEnd(e: HammerInput): void {
+        this._canManipulate = false;
+        this._direction = undefined;
     }
    
     private handlePanStart(e: HammerInput): void {
-         // Only allow manipulation when the user touched the rect
-        if (e.center.x >= this._rectX && e.center.x <= this._rectX + this._rectWidth
-            && e.center.y >= this._rectY && e.center.y <= this._rectY + this._rectHeight) {
+        if (this.isHit(e)) {
             this._canManipulate = true;
         }
 
