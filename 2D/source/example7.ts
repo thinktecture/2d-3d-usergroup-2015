@@ -115,7 +115,7 @@ class Example7 {
         var that = this;
 
         var animationFrame = function(timestamp: number) {
-            that._context.clearRect(0, 0, that._width, that._height)
+            that._context.clearRect(0, 0, that._width, that._height);
             that.draw();
             
             // Request another frame
