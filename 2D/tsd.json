@@ -19,6 +19,21 @@
     },
     "del/del.d.ts": {
       "commit": "68114f9ff37de0f92c94126b6e0164e026a1737a"
+    },
+    "hammerjs/hammerjs.d.ts": {
+      "commit": "e42bef3a8f9024a50468b12202df69519315b023"
+    },
+    "glob/glob.d.ts": {
+      "commit": "e42bef3a8f9024a50468b12202df69519315b023"
+    },
+    "node/node.d.ts": {
+      "commit": "e42bef3a8f9024a50468b12202df69519315b023"
+    },
+    "touch-events/touch-events.d.ts": {
+      "commit": "e42bef3a8f9024a50468b12202df69519315b023"
+    },
+    "minimatch/minimatch.d.ts": {
+      "commit": "e42bef3a8f9024a50468b12202df69519315b023"
     }
   }
 }
