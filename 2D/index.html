@@ -54,6 +54,13 @@
                 example.start();
             }
         }
+        else {
+            /**
+             * @type {CanvasRenderingContext2D}
+             */
+            var context = exampleCanvas.getContext('2d');
+            context.fillText('Example not found', 20, 20);
+        }
     </script>
 
 </html>
