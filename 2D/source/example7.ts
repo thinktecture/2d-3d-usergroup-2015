@@ -39,7 +39,7 @@ class Example7 {
         });
         
         this._canvas.addEventListener('touchmove', function(event) {
-            that.handleTouchMoveEvent(event);
+            that.handleTouchMoveEvent(<TouchEvent>event);
         });
     }
     

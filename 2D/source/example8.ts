@@ -32,11 +32,16 @@ class Example8 {
     private assignEvents(): void {
         var that = this;
         
-        var hammer = new Hammer(this._canvas);
+        var hammer = new Hammer.Manager(this._canvas);
+        hammer.add(new Hammer.Pan({ direction: Hammer.DIRECTION_ALL, threshold: 0 }));
         
-        hammer.on('pan', function(ev) {
-            console.log(ev);
-        })
+        hammer.on('pan', function(event) {
+            this.handlePan(event);
+        });
+    }
+    
+    private handlePan(e: HammerInput) {
+           
     }
     
     private initializeCircleProperties(): void {
