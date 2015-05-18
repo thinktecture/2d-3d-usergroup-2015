@@ -13,6 +13,8 @@ All 2D examples are consecutively built. Example1 is the base, Example2 is Examp
 3. Example: Retina scaling
 4. Example: RequestAnimationFrame
 5. Example: Time-based animations
+6. Example: Mouse Move
+7. Example: Touch Move
 
 ## Build
 
@@ -20,8 +22,8 @@ The examples are written in TypeScript and will be compiled to ES5 using gulp. T
 
 1. Point your terminal to the 2D subfolder.
 2. Execute `npm install` to install all necessary packages.
-3. Execute `node_modules/.bin/gulp` to start the default gulp task, which will compile the *.ts files, concat them into a single file and outputs it to the dist folder. Sourcemaps are generated, too.
-4. Optional: Execute `node_modules/.bin/tsd reinstall --save --overwrite` to install type definitions for better intellisense.
+3. Execute `sh build.sh` to start the default gulp task, which will compile the *.ts files, concat them into a single file and outputs it to the dist folder. Sourcemaps are generated, too.
+4. Optional: Execute `node_modules/.bin/tsd reinstall --save --overwrite` to install type definitions for better intellisense for the `gulpfile.js`.
 5. Open index.html in your browser
 
 By using hashes you can switch, which example will be used for rendering: 
