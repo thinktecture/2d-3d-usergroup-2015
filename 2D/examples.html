@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>.NET UserGroup Karlsruhe 2D Example</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type="text/css">
+            canvas {
+                border: 1px solid #000000;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div>
+            <h1>Example view</h1>
+            <p>[ <a href="index.html">Back</a> ]</p>
+        </div>
+        <div>
+            <canvas height="500" width="400" id="exampleCanvas">Your browser does not support canvas. :(</canvas>
+        </div>
+        <script src="vendor/hammer.min.js"></script>
+        <script src="dist/lib.js"></script>
+        <script>
+            /// <reference path="dist/definitions.js" />
+            
+            var exampleSelection = location.search;
+            
+            if (!exampleSelection) {
+                exampleSelection = 'example1';
+            }
+            else {
+                exampleSelection = exampleSelection.substr(1);
+            }
+           
+            var examples = {
+                example1: Example1,
+                example2: Example2,
+                example3: Example3,
+                example4: Example4,
+                example5: Example5,
+                example6: Example6,
+                example7: Example7,
+                example8: Example8
+            };
+            
+            /**
+             * @type {HTMLCanvasElement}
+             */
+            var exampleCanvas;
+            exampleCanvas = document.getElementById('exampleCanvas');
+            
+            var ctor = examples[exampleSelection];
+            
+            if (ctor) {
+                var example = new ctor(exampleCanvas);
+                 
+                example.draw();
+                
+                // For animations
+                if (example.start) {
+                    example.start();
+                }
+            }
+            else {
+                /**
+                 * @type {CanvasRenderingContext2D}
+                 */
+                var context = exampleCanvas.getContext('2d');
+                context.fillText('Example not found', 20, 20);
+            }
+        </script>
+    </body>
+
+</html>
