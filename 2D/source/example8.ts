@@ -13,6 +13,14 @@ class Example8 {
     private _rectY: number;
     private _rectWidth: number;
     private _rectHeight: number;
+    private _lastRectX: number;
+    private _lastRectY: number;
+    
+    /**
+     * Will be set to true, when rectangle can be manipulated.
+     * First touch point has to be within the rectangle boundaries.
+     */
+    private _canManipulate: boolean = false;
 
     constructor(canvas: HTMLCanvasElement) {
         if (!canvas) {
@@ -31,17 +39,45 @@ class Example8 {
 
     private assignEvents(): void {
         var that = this;
-        
+
         var hammer = new Hammer.Manager(this._canvas);
         hammer.add(new Hammer.Pan({ direction: Hammer.DIRECTION_ALL, threshold: 0 }));
-        
+
+        hammer.on('panstart', function(event) {
+            that.handlePanStart(event);
+        });
+
         hammer.on('pan', function(event) {
-            this.handlePan(event);
+            that.handlePan(event);
+        });
+        
+        hammer.on('panend', function(event) {
+            that.handlePanEnd(event);
         });
     }
-    
-    private handlePan(e: HammerInput) {
-           
+   
+    private handlePanStart(e: HammerInput): void {
+         // Only allow manipulation when the user touched the rect
+        if (e.center.x >= this._rectX && e.center.x <= this._rectX + this._rectWidth
+            && e.center.y >= this._rectY && e.center.y <= this._rectY + this._rectHeight) {
+            this._canManipulate = true;
+        }
+
+        this._lastRectX = this._rectX;
+        this._lastRectY = this._rectY;
+    }
+
+    private handlePan(e: HammerInput): void {
+        if (!this._canManipulate) {
+            return;
+        }
+        
+        this._rectX = this._lastRectX + e.deltaX;
+        this._rectY = this._lastRectY + e.deltaY;
+    }
+
+    private handlePanEnd(e: HammerInput): void {
+        this._canManipulate = false;
     }
     
     private initializeCircleProperties(): void {
