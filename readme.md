@@ -35,6 +35,9 @@ By using query parameters you can switch, which example will be used for renderi
 
 # Resources
 
+* http://www.typescriptlang.org/ Typescript
+* http://gulpjs.com/ Gulp
+* https://cordova.apache.org/ Cordova
 * http://hammerjs.github.io/ Library for touch and gestures
 * http://www.html5rocks.com/en/ A lot of tutorials about HTML5
 * http://www.html5rocks.com/en/search?q=canvas Canvas related articles, tutorials, ...
