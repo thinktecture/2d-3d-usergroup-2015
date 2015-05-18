@@ -40,7 +40,7 @@ class Example7 {
         
         this._canvas.addEventListener('touchmove', function(event) {
             that.handleTouchMoveEvent(event);
-        })
+        });
     }
     
     private handleMouseMoveEvent(e: MouseEvent): void {
