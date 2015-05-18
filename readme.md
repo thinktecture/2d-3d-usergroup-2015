@@ -26,10 +26,10 @@ The examples are written in TypeScript and will be compiled to ES5 using gulp. T
 4. Optional: Execute `node_modules/.bin/tsd reinstall --save --overwrite` to install type definitions for better intellisense for the `gulpfile.js`.
 5. Open index.html in your browser
 
-By using hashes you can switch, which example will be used for rendering: 
+By using query parameters you can switch, which example will be used for rendering: 
 
-* index.html#example1 will run Example 1
-* index.html#example2 will run Example 2
+* index.html?example1 will run Example 1
+* index.html?example2 will run Example 2
 * You get the idea. :)
 
 # Resources
