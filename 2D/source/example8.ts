@@ -41,14 +41,16 @@ class Example8 {
         var that = this;
 
         var hammer = new Hammer.Manager(this._canvas);
+        
+        // Add a recognizer for panning which will recognize all directions (per default, it would recognize horizontal panning only)
         hammer.add(new Hammer.Pan({ direction: Hammer.DIRECTION_ALL, threshold: 0 }));
 
         hammer.on('panstart', function(event) {
             that.handlePanStart(event);
         });
 
-        hammer.on('pan', function(event) {
-            that.handlePan(event);
+        hammer.on('panmove', function(event) {
+            that.handlePanMove(event);
         });
         
         hammer.on('panend', function(event) {
@@ -67,7 +69,7 @@ class Example8 {
         this._lastRectY = this._rectY;
     }
 
-    private handlePan(e: HammerInput): void {
+    private handlePanMove(e: HammerInput): void {
         if (!this._canManipulate) {
             return;
         }
