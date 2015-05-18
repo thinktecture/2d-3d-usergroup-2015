@@ -75,10 +75,33 @@ class Example8 {
         });
     }
     
-    private isHit(e: HammerInput): boolean {
-        // Only allow manipulation when the user touched the rect
-        return e.center.x >= this._rectX && e.center.x <= this._rectX + this._rectWidth
-            && e.center.y >= this._rectY && e.center.y <= this._rectY + this._rectHeight;
+    /**
+     * Returns the correct positions of an event (mouse/touch)
+     * 
+     * See: http://stackoverflow.com/a/10816667/959687
+     */
+    private getOffset(event: any): any {
+        var el = event.target,
+            x = 0,
+            y = 0;
+
+        while (el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)) {
+            x += el.offsetLeft - el.scrollLeft;
+            y += el.offsetTop - el.scrollTop;
+            el = el.offsetParent;
+        }
+
+        // Adopted for HammerJS        
+        x = event.center.x - x;
+        y = event.center.y - y;
+
+        return { x: x, y: y };
+    }
+    
+    private isHit(x: number, y: number): boolean {
+        // Is the Center of the hammer input within the rect? 
+        return x >= this._rectX && x <= this._rectX + this._rectWidth
+            && y >= this._rectY && y <= this._rectY + this._rectHeight;
     }
     
     private handlePinchStart(e: HammerInput): void {
@@ -92,7 +115,6 @@ class Example8 {
             this._direction = e.direction;
         }
         
-        //var direction = parseInt(e.offsetDirection, 10);
         var direction = this._direction;
         
         if (direction === Hammer.DIRECTION_DOWN || direction === Hammer.DIRECTION_UP) {
@@ -110,7 +132,9 @@ class Example8 {
     }
    
     private handlePanStart(e: HammerInput): void {
-        if (this.isHit(e)) {
+        var pos = this.getOffset(e);
+        
+        if (this.isHit(pos.x, pos.y)) {
             this._canManipulate = true;
         }
 
