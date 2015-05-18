@@ -19,13 +19,13 @@
     <script>
         /// <reference path="dist/definitions.js" />
         
-        var hash = location.hash;
+        var exampleSelection = location.search;
         
-        if (!hash) {
-            hash = 'example1';
+        if (!exampleSelection) {
+            exampleSelection = 'example1';
         }
         else {
-            hash = hash.substr(1);
+            exampleSelection = exampleSelection.substr(1);
         }
        
         var examples = {
@@ -44,7 +44,7 @@
         var exampleCanvas;
         exampleCanvas = document.getElementById('exampleCanvas');
         
-        var ctor = examples[hash];
+        var ctor = examples[exampleSelection];
         
         if (ctor) {
             var example = new ctor(exampleCanvas);
