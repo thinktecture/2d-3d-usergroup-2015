@@ -43,17 +43,42 @@ class Example7 {
         });
     }
     
+    /**
+     * Returns the correct positions of an event (mouse/touch)
+     * 
+     * See: http://stackoverflow.com/a/10816667/959687
+     */
+    private getOffset(event: any): any {
+        var el = event.target,
+            x = 0,
+            y = 0;
+
+        while (el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)) {
+            x += el.offsetLeft - el.scrollLeft;
+            y += el.offsetTop - el.scrollTop;
+            el = el.offsetParent;
+        }
+
+        x = event.clientX - x;
+        y = event.clientY - y;
+
+        return { x: x, y: y };
+    }
+    
     private handleMouseMoveEvent(e: MouseEvent): void {
         e.preventDefault();
         
-        this._circleX = e.clientX;
-        this._circleY = e.clientY;
+        var position = this.getOffset(e);
+        this._circleX = position.x;
+        this._circleY = position.y;
     }
     
     private handleTouchMoveEvent(e: TouchEvent): void {
         // .touches is an array containing one or more touch points for multi-touch scenarios
-        this._circleX = e.touches[0].clientX;
-        this._circleY = e.touches[0].clientY;
+        
+        var position = this.getOffset(e.touches[0]);
+        this._circleX = position.x;
+        this._circleY = position.y;
     }
     
     private initializeCircleProperties(): void {

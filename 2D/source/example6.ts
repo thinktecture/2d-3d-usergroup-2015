@@ -28,19 +28,42 @@ class Example6 {
 
     private assignEvents(): void {
         var that = this;
-        
+
         this._canvas.addEventListener('mousemove', function(event) {
             that.handleMouseMoveEvent(event);
         });
     }
-    
+
+    /**
+     * Returns the correct positions of an event (mouse/touch)
+     * 
+     * See: http://stackoverflow.com/a/10816667/959687
+     */
+    private getOffset(event: any): any {
+        var el = event.target,
+            x = 0,
+            y = 0;
+
+        while (el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)) {
+            x += el.offsetLeft - el.scrollLeft;
+            y += el.offsetTop - el.scrollTop;
+            el = el.offsetParent;
+        }
+
+        x = event.clientX - x;
+        y = event.clientY - y;
+
+        return { x: x, y: y };
+    }
+
     private handleMouseMoveEvent(e: MouseEvent): void {
         e.preventDefault();
-        
-        this._circleX = e.clientX;
-        this._circleY = e.clientY;
+
+        var position = this.getOffset(e);
+        this._circleX = position.x;
+        this._circleY = position.y;
     }
-    
+
     private initializeCircleProperties(): void {
         // Points where the circle will be, so the gradient can be adjusted as well
         this._circleX = 50;
