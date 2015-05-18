@@ -50,8 +50,7 @@ class Example7 {
         this._circleY = e.clientY;
     }
     
-    // Typescript does not support TouchEvent yet, so we just use "any"
-    private handleTouchMoveEvent(e: any/*: TouchEvent*/): void {
+    private handleTouchMoveEvent(e: TouchEvent): void {
         // .touches is an array containing one or more touch points for multi-touch scenarios
         this._circleX = e.touches[0].clientX;
         this._circleY = e.touches[0].clientY;
