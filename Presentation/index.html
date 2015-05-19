@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        <title>Cross platform 2D &amp; 3D visualizations</title>
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css" id="theme">
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            			link.rel = 'stylesheet';
+            			link.type = 'text/css';
+            			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            			document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+        <!--[if lt IE 9]>
+            <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    
+    <body>
+        <div class="reveal">
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>2D &amp; 3D visualizations</h1>
+                    <h3>Cross platform, touch optimized</h3>
+                    <p>
+                        <small>Christian Liebel, Christian Weyer, Manuel Rauber</small>
+                    </p>
+                </section>
+                <section>
+                    <h2>Introduction</h2>
+                </section>
+                <section>
+                    <h2>Talking points</h2>
+                </section>
+                <section>
+                    <h1>2D visualization</h1>
+                    <p>
+                        <small>Manuel Rauber<br />@manuelrauber</small>
+                    </p>
+                    <p style="color: red">Unsorted!</p>
+                </section>
+                <section>
+                    <h2>Why</h2>
+                </section>
+                <section>
+                    <h2>Coordinate system</h2>
+                    <p>Cartesian: (0/0) bottom left</p>
+                    <p>Canvas: (0/0) top left</p>
+                    <img src="images/canvas-coordinate.png" />
+                    <p>
+                        <small><a href="http://www.sitepoint.com/html5-canvas-tutorial-introduction/">From http://www.sitepoint.com/html5-canvas-tutorial-introduction/</a></small>
+                    </p>
+                    
+                    <aside class="notes">
+                        People are used to the cartesian coordinate system. Increasing Y goes up, decreasing down. In canvas space it's flipped: increasing Y goes down, decreasing up.
+                    </aside>
+                </section>
+                <section>
+                    <h2>Browser support</h2>
+                    <img src="images/browsersupport.png" />
+                    <p>
+                        <small><a href="http://caniuse.com/#search=canvas">From http://caniuse.com/#search=canvas</a></small>
+                    </p>
+                </section>
+                <section>
+                    <h2>Usage</h2>
+                    <pre><code data-trim contenteditable>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;Canvas!&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;canvas&gt;&lt;/canvas&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </section>
+                <section>
+                    <h2>Contexts</h2>
+                    <div class="fragment">
+                        <p>
+                            2D context: CanvasRenderingContext2D
+                        </p>
+                        <pre><code data-trim contenteditable>var context = canvas.getContext('2d');</code></pre>
+                    </div>
+                    <div class="fragment">
+                        <p>3D context: WebGLRenderingContext</p>
+                        <pre><code data-trim contenteditable>var context = canvas.getContext('webgl');</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Basic API</h2>
+                </section>
+                <section>
+                    <h2>requestAnimationFrame</h2>
+                </section>
+                <section>
+                    <h2>Retina support</h2>
+                </section>
+                <section>
+                    <h2>Alternatives</h2>
+                </section>
+                <section>
+                    <h2>Touch support</h2>
+                </section>
+                <section>
+                    <h2>Performance</h2>
+                </section>
+                <section>
+                    <section>
+                        <h2>Examples</h2>
+                    </section>
+                </section>
+                <section>
+                    <h2>Live Demo</h2>
+                </section>
+                
+                <section>
+                    <h1>3D visualization</h1>
+                    <p>
+                        <small>Christian Liebel<br />@chris_liebel</small>
+                    </p>
+                </section>
+                <section>
+                    <h1>Summary</h1>
+                    <ul>
+                        <li>Cross platform high-performance graphic manipulation</li>
+                        <li>2D &amp; 3D</li>
+                        <li>Hardware acceleration</li>
+                        <li>Supported by all major browsers</li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>Thank you!</h1>
+                </section>
+                <section>
+                    <h1>Resources</h1>
+                    <ul>
+                        <li>GitHub repository: <a href="https://github.com/thinktecture/DotNetUserGroupKA2015">https://github.com/thinktecture/DotNetUserGroupKA2015</a></li>
+                        <li>Canvas browser support: <a href="http://caniuse.com/#search=canvas">http://caniuse.com/#search=canvas</a></li>
+                        <li>Cordova: <a href="https://cordova.apache.org/">https://cordova.apache.org/</a></li>
+                        <li>Gulp: <a href="http://gulpjs.com">http://gulpjs.com</a></li>
+                        <li>TypeScript: <a href="http://www.typescriptlang.org/">http://www.typescriptlang.org/</a></li>  
+                        <li>CanvasRenderingContext2D: <a href="https://developer.mozilla.org/en/docs/Web/API/CanvasRenderingContext2D">https://developer.mozilla.org/en/docs/Web/API/CanvasRenderingContext2D</a></li>
+                        <li>WebGLRenderingContext</li>  
+                    </ul>
+                </section>
+            </div>
+        </div>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+        <script>
+            // Full list of configuration options available at:
+            			// https://github.com/hakimel/reveal.js#configuration
+            			Reveal.initialize({
+                            history: true,
+            				transition: 'slide', // none/fade/slide/convex/concave/zoom
+            
+            				// Optional reveal.js plugins
+            				dependencies: [
+            					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+            					{ src: 'plugin/zoom-js/zoom.js', async: true },
+            					{ src: 'plugin/notes/notes.js', async: true }
+            				]
+            			});
+        </script>
+    </body>
+
+</html>
