@@ -159,7 +159,29 @@
                 </section>
                 
                 <section>
-                    <h2>Retina support</h2>
+                    <section>
+                        <h2>Retina support</h2>
+                        <img src="images/retina.png" />
+                    </section>
+                    <section>
+                        <h2>Retina - How to</h2>
+                        <pre><code data-trim contenteditable>function adjustForRetina() {
+    if (!window.devicePixelRatio || window.devicePixelRatio &#x3C;= 1) {
+        return;
+    }
+
+    var width = canvas.width;
+    var height = canvas.height;
+        
+    canvas.style.width = width + &#x27;px&#x27;;
+    canvas.style.height = height + &#x27;px&#x27;;
+        
+    canvas.width = width * window.devicePixelRatio;
+    canvas.height = height * window.devicePixelRatio;
+
+    context.scale(window.devicePixelRatio, window.devicePixelRatio);
+ }</code></pre>
+                    </section>
                 </section>
                 <section>
                     <h2>Contexts</h2>
