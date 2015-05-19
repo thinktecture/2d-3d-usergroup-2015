@@ -17,6 +17,11 @@ Example1 to Example7 are consecutively built. Example1 is the base, Example2 is 
 7. Example: Touch Move
 8. Example: Manipulating a rectangle with HammerJS
 
+## Requirements
+
+* [NodeJS & npm](https://nodejs.org/)
+* Optional: cordova, xcode, android-sdk (only if you want to compile the cordova part)
+
 ## Build
 
 The examples are written in TypeScript and will be compiled to ES5 using gulp. To get the examples up & running, do the following:
@@ -29,9 +34,14 @@ The examples are written in TypeScript and will be compiled to ES5 using gulp. T
 
 By using query parameters you can switch, which example will be used for rendering: 
 
-* index.html?example1 will run Example 1
-* index.html?example2 will run Example 2
+* examples.html?example1 will run Example 1
+* examples.html?example2 will run Example 2
 * You get the idea. :)
+
+## Cordova
+
+The 2D examples can be deployed to iOS and Android by cordova. All necessary files are within the cordova folder. To run, just use the provides `deploy.sh` script by executing `sh deploy.sh`. 
+It will use gulp for copying the files to the cordova/www folder and then executes `cordova run --device` which will deploy to all connected devices. 
 
 # Resources
 
