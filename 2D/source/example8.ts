@@ -188,11 +188,14 @@ class Example8 {
         // Save the canvas context, so we can set our own values
         this._context.save();
         
-        // Begin a new path (a new drawing stack)
+        // Begin a new path (creates a new path stack)
         this._context.beginPath();
         
         // Draw a simple rect
         this._context.rect(this._rectX, this._rectY, this._rectWidth, this._rectHeight);
+        
+        // Close the path
+        this._context.closePath();
         
         // Fill the rect
         this._context.fill();

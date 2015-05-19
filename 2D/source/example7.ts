@@ -119,7 +119,7 @@ class Example7 {
         gradient.addColorStop(0, '#000000');
         gradient.addColorStop(1, '#FFFFFF');
         
-        // Begin a new path (a new drawing stack)
+        // Begin a new path (creates a new path stack)
         this._context.beginPath();
         
         // Draw the circle
@@ -127,10 +127,13 @@ class Example7 {
         // End at angle 2 * Math.Pi (full circle)
         this._context.arc(this._circleX, this._circleY, this._circleRadius, 0, 2 * Math.PI);
         
+        // Close the path
+        this._context.closePath();
+        
         // assign the gradient and fill the circle with it
         this._context.fillStyle = gradient;
         this._context.fill();
-
+        
         this._context.restore();
     }
 

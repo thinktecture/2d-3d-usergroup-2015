@@ -15,7 +15,7 @@ class Example1 {
     }    
     
     public draw() {
-        // Begin a new path (a new drawing stack)
+        // Begin a new path (creates a new path stack)
         this._context.beginPath();
         
         // Draw the circle
@@ -24,6 +24,9 @@ class Example1 {
         // Start from angle 0
         // End at angle 2 * Math.Pi (full circle)
         this._context.arc(50, 50, 50, 0, 2 * Math.PI);
+        
+        // Close the path
+        this._context.closePath();
         
         // Fill the circle with default settings (black)
         this._context.fill();
