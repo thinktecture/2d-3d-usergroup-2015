@@ -35,6 +35,20 @@ gulp.task('default', ['clean'], function () {
     ]);
 });
 
+gulp.task('clean-cordova', function (cb) {
+    del('cordova/www', cb);
+});
+
+gulp.task('deploy', ['clean', 'clean-cordova', 'default'], function () {
+    return gulp.src([
+        'index.html',
+        'examples.html',
+        'dist/*.js',
+        'vendor/*.js'
+    ], { base: './' })
+        .pipe(gulp.dest('cordova/www'));
+});
+
 gulp.task('watch', ['default'], function () {
     gulp.watch(sourceFolder + '/**/*.ts', ['default']);
 });

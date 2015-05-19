@@ -80,3 +80,18 @@ crashlytics-build.properties
 
 typings/
 dist/
+
+# Cordova
+2D/cordova/www
+2D/cordova/out
+2D/cordova/platforms/**/www
+2D/cordova/platforms/ios/xcuserdata
+2D/cordova/platforms/ios/project.xcworkspace
+2D/cordova/platforms/ios/CordovaLib/CordovaLib.xcodeproj/xcuserdata
+2D/cordova/platforms/ios/twodexample.xcodeproj/project.xcworkspace
+2D/cordova/platforms/ios/twodexample.xcodeproj/xcuserdata
+2D/cordova/platforms/android/assets/www
+2D/cordova/platforms/android/bin/
+2D/cordova/platforms/android/gen/
+2D/cordova/platforms/android/res/xml/config.xml
+2D/cordova/platforms/android/.gradle
