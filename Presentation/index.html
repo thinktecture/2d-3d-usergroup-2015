@@ -42,16 +42,107 @@
                 </section>
                 <section>
                     <h2>Talking points</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>2D</th>
+                                <th>3D</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <ul>
+                                        <li>Overview <br/>
+                                        <small>Browser support, performance, <br/>retina scaling, alternatives</small></li>
+                                        <li>API<br/>
+                                        <small>Basics, stacks, animation</small></li>
+                                        <li>Examples</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>Overview</li>
+                                        <li>API</li>
+                                        <li>Examples</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </section>
                 <section>
                     <h1>2D visualization</h1>
+                    <h3>HTML5 Canvas</h3>
                     <p>
                         <small>Manuel Rauber<br />@manuelrauber</small>
                     </p>
                     <p style="color: red">Unsorted!</p>
                 </section>
                 <section>
-                    <h2>Why</h2>
+                    <h2>Overview</h2>
+                    <ul>
+                        <li>Cross platform graphic manipulations</li>
+                        <li>High performance</li>
+                        <li>Mouse &amp; touch support</li>
+                        <li>Low energy consumpting animations</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <h2>Browser support (basic)</h2>
+                        <img src="images/browsersupport.png" />
+                        <p>
+                            <small><a href="http://caniuse.com/#search=canvas">From http://caniuse.com/#search=canvas</a></small>
+                        </p>
+                        
+                        <aside class="notes">
+                            Basic covers all drawing operations.
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Browser support (overall)</h2>
+                        <img src="images/browsersupport-overall.png" />
+                        <p>
+                            <small><a href="http://caniuse.com/#search=canvas">From http://caniuse.com/#search=canvas</a></small>
+                        </p>
+                        
+                        <aside class="notes">
+                            <ul>
+                                <li>Text API</li>
+                                <li>WebGL</li>
+                                <li>Canvas blend modes</li>
+                            </ul>
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Usage</h2>
+                    <pre><code data-trim contenteditable>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;Canvas!&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;canvas&gt;&lt;/canvas&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </section>
+                    <section>
+                        <h2>Fallback</h2>
+                    <pre><code data-trim contenteditable>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;Canvas!&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;canvas&gt;This text is shown, 
+                    when a browser does not 
+                    support canvas.&lt;/canvas&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </section>
                 </section>
                 <section>
                     <h2>Coordinate system</h2>
@@ -63,27 +154,12 @@
                     </p>
                     
                     <aside class="notes">
-                        People are used to the cartesian coordinate system. Increasing Y goes up, decreasing down. In canvas space it's flipped: increasing Y goes down, decreasing up.
+                        People are used to use the cartesian coordinate system. Increasing Y goes up, decreasing down. In canvas space it's flipped: increasing Y goes down, decreasing up.
                     </aside>
                 </section>
+                
                 <section>
-                    <h2>Browser support</h2>
-                    <img src="images/browsersupport.png" />
-                    <p>
-                        <small><a href="http://caniuse.com/#search=canvas">From http://caniuse.com/#search=canvas</a></small>
-                    </p>
-                </section>
-                <section>
-                    <h2>Usage</h2>
-                    <pre><code data-trim contenteditable>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-	&lt;head&gt;
-		&lt;title&gt;Canvas!&lt;/title&gt;
-	&lt;/head&gt;
-	&lt;body&gt;
-		&lt;canvas&gt;&lt;/canvas&gt;
-	&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+                    <h2>Retina support</h2>
                 </section>
                 <section>
                     <h2>Contexts</h2>
@@ -105,10 +181,16 @@
                     <h2>requestAnimationFrame</h2>
                 </section>
                 <section>
-                    <h2>Retina support</h2>
-                </section>
-                <section>
                     <h2>Alternatives</h2>
+                    <p>setTimeout</p>
+                    <pre class="fragment"><code data-trim contenteditable>function draw() {
+    // draw routine
+    setTimeout(draw, 1000/60);
+}</code></pre>
+                    <p>setInterval</p>
+                    <pre class="fragment"><code data-trim contenteditable>setInterval(function () {
+    // draw routine            
+}, 1000/60);</code></pre>
                 </section>
                 <section>
                     <h2>Touch support</h2>
