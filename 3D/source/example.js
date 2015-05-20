@@ -23,7 +23,7 @@
 		scene.add(group);
 		
 		var textureLoader = new THREE.TextureLoader();
-		textureLoader.load('source/earth.jpg', function (texture) {
+		textureLoader.load('assets/earth.jpg', function (texture) {
 			var geometry = new THREE.SphereGeometry(5, 32, 32);
 			var material = new THREE.MeshLambertMaterial({map: texture});
 			var sphere = new THREE.Mesh(geometry, material);
