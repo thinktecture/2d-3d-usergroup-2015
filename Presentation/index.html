@@ -281,12 +281,12 @@ function stopAnimation() {
                     <section>
                         <h2>Interaction</h2>
                         <h3>Keyboard &amp; mouse support</h3>
-                        <p>Supports all keyboard &amp; mouse events like <code>keydown</code>, <code>keyup</code>, <code>mousedown</code> or <code>mousemove</code>.</p>
-                        <pre><code data-trim contenteditable>canvas.addEventListener('mousemove', function (event) {
+                        <p>Canvas supports all keyboard &amp; mouse events like <code>keydown</code>, <code>keyup</code>, <code>mousedown</code> or <code>mousemove</code>.</p>
+                        <pre><code data-trim contenteditable>canvas.addEventListener('mousemove', function (mouseEvent) {
     // mouse event routine  
  });
  
- canvas.addEventListener('keydown', function (event) {
+ canvas.addEventListener('keydown', function (keyEvent) {
     // key down event routine 
 });</code></pre>
                     <p>
@@ -294,6 +294,20 @@ function stopAnimation() {
                             MDN: <br/>
                             <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent</a><br/>
                             <a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent">https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent</a>
+                        </small>
+                    </p>
+                    </section>
+                    <section>
+                        <h2>Interaction</h2>
+                        <h3>Touch</h3>
+                        <p>Canvas supports all touch events like <code>touchstart</code>, <code>touchmove</code>, <code>touchend</code>. 
+                        Consider using a library for recognizing gestures like <a href="http://hammerjs.github.io/">HammerJS</a>.</p>
+                         <pre><code data-trim contenteditable>canvas.addEventListener('touchmove', function (touchEvent) {
+    // touch move event routine  
+ });
+</code></pre>   
+                    <p>
+                        <small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Touch_events">Touch events</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent">TouchEvent</a>
                         </small>
                     </p>
                     </section>
