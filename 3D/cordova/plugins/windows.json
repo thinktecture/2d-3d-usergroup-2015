@@ -8,7 +8,7 @@
     },
     "installed_plugins": {
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "{ddba3c50-fef5-11e4-9fd0-e32b57f6c934}"
+            "PACKAGE_NAME": "3DExample"
         }
     },
     "dependent_plugins": {}

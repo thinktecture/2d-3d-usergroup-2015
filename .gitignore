@@ -100,3 +100,4 @@ dist/
 3D/cordova/plugins/cordova-plugin-whitelist
 3D/cordova/www
 3D/cordova/out
+3D/cordova/platforms/windows
