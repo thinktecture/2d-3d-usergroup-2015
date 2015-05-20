@@ -18,16 +18,14 @@
 		camera.position.x = 20;
 		
 		scene = new THREE.Scene();
-
-		var group = new THREE.Group();
-		scene.add(group);
 		
+		// Sphere
 		var textureLoader = new THREE.TextureLoader();
 		textureLoader.load('assets/earth.jpg', function (texture) {
 			var geometry = new THREE.SphereGeometry(5, 32, 32);
 			var material = new THREE.MeshLambertMaterial({map: texture});
 			var sphere = new THREE.Mesh(geometry, material);
-			group.add(sphere);
+			scene.add(sphere);
 		});
 		
 		// Lights
