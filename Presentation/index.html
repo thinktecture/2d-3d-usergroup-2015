@@ -54,9 +54,9 @@
                                 <td>
                                     <ul>
                                         <li>Overview <br/>
-                                        <small>Browser support, performance, <br/>retina scaling, alternatives</small></li>
+                                        <small>Browser support, performance, <br/>retina scaling</small></li>
                                         <li>API<br/>
-                                        <small>Basics, stacks, animation</small></li>
+                                        <small>Basics, animation, interaction</small></li>
                                         <li>Examples</li>
                                     </ul>
                                 </td>
@@ -255,9 +255,28 @@ void putImageData(imagedata, dx, dy);
                     <h2>Animations</h2>
                     <h3>The modern way</h3>
                     <p>requestAnimationFrame</p>
+                    <pre><code data-trim contenteditable>var animationFrame;
+function startAnimation() {
+    animationFrame = function() {
+        // draw routine
+        window.requestAnimationFrame(animationFrame);
+    }
+    
+    window.requestAnimationFrame(animationFrame);
+}
+
+function stopAnimation() {
+    window.cancelAnimationFrame(animationFrame);
+}
+                        
+                    </code></pre>
+                    <p>
+                        <small>
+                            MDN: <br/><a href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame">https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame</a><br />
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/cancelAnimationFrame">https://developer.mozilla.org/en-US/docs/Web/API/Window/cancelAnimationFrame</a>
+                        </small>
+                    </p>
                 </section>
-                
-                
                 <section>
                     <h2>Touch support</h2>
                 </section>
