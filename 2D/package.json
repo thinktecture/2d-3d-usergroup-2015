@@ -5,7 +5,7 @@
   "main": "index.html",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ManuelRauber/DotNetUserGroupKA2015"
+    "url": "https://github.com/thinktecture/DotNetUserGroupKA2015"
   },
   "keywords": [
     "2D",
@@ -16,9 +16,9 @@
   "author": "Manuel Rauber",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ManuelRauber/DotNetUserGroupKA2015/issues"
+    "url": "https://github.com/thinktecture/DotNetUserGroupKA2015/issues"
   },
-  "homepage": "https://github.com/ManuelRauber/DotNetUserGroupKA2015",
+  "homepage": "https://github.com/thinktecture/DotNetUserGroupKA2015",
   "devDependencies": {
     "del": "^1.1.1",
     "gulp": "^3.8.11",
