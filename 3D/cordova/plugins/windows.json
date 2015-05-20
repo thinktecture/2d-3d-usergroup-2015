@@ -7,8 +7,14 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-crosswalk-webview": {
+            "PACKAGE_NAME": "cordova"
+        },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "3DExample"
+            "PACKAGE_NAME": "cordova"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "cordova"
         }
     },
     "dependent_plugins": {}
