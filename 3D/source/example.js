@@ -1,3 +1,6 @@
+/* global Stats */
+/* global THREE */
+
 (function () {
 	
 	var container, camera, scene, renderer, controls, stats;
@@ -14,8 +17,7 @@
 		container = document.getElementById('container');
 		
 		camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 1, 500);
-		camera.position.z = -20;
-		camera.position.x = 20;
+		camera.position.set(0, 0, -30);
 		
 		scene = new THREE.Scene();
 		
@@ -25,6 +27,7 @@
 			var geometry = new THREE.SphereGeometry(5, 32, 32);
 			var material = new THREE.MeshLambertMaterial({map: texture});
 			var sphere = new THREE.Mesh(geometry, material);
+			sphere.rotation.y = -30;
 			scene.add(sphere);
 		});
 		
@@ -33,7 +36,7 @@
 		scene.add(ambientLight);
 		
 		var spotLight = new THREE.SpotLight(0xffffff);
-		spotLight.position.set(500, 0, 500);
+		spotLight.position.set(0, 0, -500);
 		scene.add(spotLight);
 		
 		// Stars
