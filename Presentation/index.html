@@ -192,18 +192,55 @@
                         <pre><code data-trim contenteditable>var context = canvas.getContext('2d');</code></pre>
                     </div>
                     <div class="fragment">
-                        <p>3D context: WebGLRenderingContext</p>
+                        <p>WebGL context: WebGLRenderingContext</p>
                         <pre><code data-trim contenteditable>var context = canvas.getContext('webgl');</code></pre>
                     </div>
                 </section>
                 <section>
-                    <h2>Basic API</h2>
+                    <section>
+                        <h2>API</h2>
+                        <h3>Drawing</h3>
+                        <pre><code data-trim contenteditable>void fillRect(x, y, width, height);
+void strokeRect(x, y, width, height);
+void clearRect(x, y, width, height);
+void fillText(text, x, y [, maxWidth]);
+void strokeText(text, x, y [, maxWidth]);
+                        </code></pre>
+                        <p>
+                            <small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D">https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D</a></small>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>API</h2>
+                        <h3>Paths</h3>
+                        <pre><code data-trim contenteditable>void beginPath();
+void closePath();
+void moveTo(x, y);
+void lineTo(x, y);
+void bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y);
+void rect(x, y, width, height);
+void fill();
+void stroke();
+                        </code></pre>
+                        <p>
+                            <small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D">https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D</a></small>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>API</h2>
+                        <h3>Pixel manipulation</h3>
+                        <pre><code data-trim contenteditable>ImageData createImageData(width, height);
+ImageData getImageData(sx, sy, sw, sh);
+void putImageData(imagedata, dx, dy);
+                        </code></pre>
+                        <p>
+                            <small>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D">https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D</a></small>
+                        </p>
+                    </section>
                 </section>
                 <section>
-                    <h2>requestAnimationFrame</h2>
-                </section>
-                <section>
-                    <h2>Alternatives</h2>
+                    <h2>Animations</h2>
+                    <h3>The old way</h3>
                     <p>setTimeout</p>
                     <pre class="fragment"><code data-trim contenteditable>function draw() {
     // draw routine
@@ -213,7 +250,14 @@
                     <pre class="fragment"><code data-trim contenteditable>setInterval(function () {
     // draw routine            
 }, 1000/60);</code></pre>
+                </section> 
+               <section>
+                    <h2>Animations</h2>
+                    <h3>The modern way</h3>
+                    <p>requestAnimationFrame</p>
                 </section>
+                
+                
                 <section>
                     <h2>Touch support</h2>
                 </section>
