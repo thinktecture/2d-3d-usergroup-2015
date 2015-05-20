@@ -95,3 +95,9 @@ dist/
 2D/cordova/platforms/android/gen/
 2D/cordova/platforms/android/res/xml/config.xml
 2D/cordova/platforms/android/.gradle
+3D/cordova/platforms/ios
+3D/cordova/platforms/wp8
+3D/cordova/plugins/cordova-plugin-whitelist
+3D/cordova/www
+3D/cordova/out
+3D/cordova/platforms/windows
