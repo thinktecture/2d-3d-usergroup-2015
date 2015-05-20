@@ -1,0 +1,9 @@
+body {
+	margin: 0;
+}
+
+#stats {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
