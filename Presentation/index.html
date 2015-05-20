@@ -256,12 +256,12 @@ void putImageData(imagedata, dx, dy);
                     <p>requestAnimationFrame</p>
                     <pre><code data-trim contenteditable>var animationFrame;
 function startAnimation() {
-    animationFrame = function() {
+    var step = function() {
         // draw routine
-        window.requestAnimationFrame(animationFrame);
+        animationFrame = window.requestAnimationFrame(step);
     }
     
-    window.requestAnimationFrame(animationFrame);
+    animationFrame = window.requestAnimationFrame(step);
 }
 
 function stopAnimation() {
