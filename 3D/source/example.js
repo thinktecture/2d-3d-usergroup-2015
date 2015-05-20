@@ -60,7 +60,7 @@
 		renderer.setClearColor(0x000000);
 		container.appendChild(renderer.domElement);
 		
-		controls = new THREE.TrackballControls(camera, container);
+		controls = new THREE.TrackballControls(camera);
 	}
 	
 	function animate() {
