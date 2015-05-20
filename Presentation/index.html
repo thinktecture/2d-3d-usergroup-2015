@@ -253,28 +253,71 @@ void putImageData(imagedata, dx, dy);
 }, 1000/60);</code></pre>
                 </section> 
                <section>
-                    <h2>Animations</h2>
-                    <h3>The modern way</h3>
-                    <p>requestAnimationFrame</p>
-                    <pre><code data-trim contenteditable>var animationFrame;
-function startAnimation() {
-    var step = function() {
-        // draw routine
+                   <section>
+                        <h2>Animations</h2>
+                        <h3>The modern way</h3>
+                        <p>requestAnimationFrame</p>
+                        <pre><code data-trim contenteditable>var animationFrame;
+    function startAnimation() {
+        var step = function() {
+            // draw routine
+            animationFrame = window.requestAnimationFrame(step);
+        }
+        
         animationFrame = window.requestAnimationFrame(step);
     }
     
-    animationFrame = window.requestAnimationFrame(step);
-}
-
-function stopAnimation() {
-    window.cancelAnimationFrame(animationFrame);
-}</code></pre>
-                    <p>
-                        <small>
-                            MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame">requestAnimationFrame</a>,
-                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/cancelAnimationFrame">cancelAnimationFrame</a>
-                        </small>
-                    </p>
+    function stopAnimation() {
+        window.cancelAnimationFrame(animationFrame);
+    }</code></pre>
+                        <p>
+                            <small>
+                                MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame">requestAnimationFrame</a>,
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/cancelAnimationFrame">cancelAnimationFrame</a>
+                            </small>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Animations</h2>
+                        <h3>Problem with &quot;old&quot; techniques</h3>
+                                <ul>
+                                    <li>If the callback function take longer than the timer will call it, the callback function gets queued.</li>
+                                    <li>Could lead quickly to an &quot;infinite&quot; amount of queued callback functions.</li>
+                                    <li>Timers continue to work in background tabs, the browser will render invisible animations (wastage of CPU and battery life).</li>
+                                    <li>Especially bad for mobile devices.</li>
+                                </ul>
+                                <p>
+                                    <small>From <a href="https://dev.opera.com/articles/better-performance-with-requestanimationframe/">https://dev.opera.com/articles/better-performance-with-requestanimationframe/</a></small>
+                                </p>
+                    </section>
+                    <section>
+                        <h2>Animations</h2>
+                        <h3>What requestAnimationFrame does</h3>
+                        <ul>
+                            <li>Only executed when visible to the user (will stop in background tabs!).</li>
+                            <li>No wastage of CPU and battery life.</li>
+                            <li>Frame is only drawn when browser is ready and no other frame waits for drawing.</li>
+                            <li>No &quot;infinite&quot; amount of queued callback functions.</li>
+                        </ul>
+                        <p>
+                                    <small>From <a href="https://dev.opera.com/articles/better-performance-with-requestanimationframe/">https://dev.opera.com/articles/better-performance-with-requestanimationframe/</a></small>
+                                </p>
+                    </section>
+                    <section>
+                        <h2>Animations</h2>
+                        <h3>What requestAnimationFrame doesn't do</h3>
+                        <ul>
+                            <li>As the name suggests: Only one frame is requested. <code>requestAnimationFrame</code> has to be called within the callback to get a 
+                            animation loop.</li>
+                            <li>You don't know, when the callback will be executed.</li>
+                            <li>Animations on the same page, where one is in the visible area and one not, will not run synchronously since the hidden one will not be
+                                called.
+                            </li>
+                        </ul>
+                        <p>
+                                    <small>From <a href="https://dev.opera.com/articles/better-performance-with-requestanimationframe/">https://dev.opera.com/articles/better-performance-with-requestanimationframe/</a></small>
+                                </p>
+                    </section>
                 </section>
                 <section>
                     <section>
