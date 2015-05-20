@@ -278,7 +278,25 @@ function stopAnimation() {
                     </p>
                 </section>
                 <section>
-                    <h2>Touch support</h2>
+                    <section>
+                        <h2>Interaction</h2>
+                        <h3>Keyboard &amp; mouse support</h3>
+                        <p>Supports all keyboard &amp; mouse events like <code>keydown</code>, <code>keyup</code>, <code>mousedown</code> or <code>mousemove</code>.</p>
+                        <pre><code data-trim contenteditable>canvas.addEventListener('mousemove', function (event) {
+    // mouse event routine  
+ });
+ 
+ canvas.addEventListener('keydown', function (event) {
+    // key down event routine 
+});</code></pre>
+                    <p>
+                        <small>
+                            MDN: <br/>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent</a><br/>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent">https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent</a>
+                        </small>
+                    </p>
+                    </section>
                 </section>
                 <section>
                     <h2>Performance</h2>
