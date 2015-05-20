@@ -42,9 +42,8 @@ gulp.task('clean-cordova', function (cb) {
 gulp.task('deploy', ['clean', 'clean-cordova', 'default'], function () {
     return gulp.src([
         'index.html',
-        'examples.html',
-        'dist/*.js',
-        'vendor/*.js'
+        'demo.html',
+        'dist/*.js'
     ], { base: './' })
         .pipe(gulp.dest('cordova/www'));
 });
