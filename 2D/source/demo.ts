@@ -6,8 +6,8 @@ class Demo {
      private _width: number;
      private _height: number;
      
-     private _x: number = 50;
-     private _y: number = 50;
+     private _x: number = 200;
+     private _y: number = 200;
      private _vx: number = 10;
      private _vy: number = 10;
      private _canBounce: boolean = true;
