@@ -40,15 +40,38 @@ By using query parameters you can switch, which example will be used for renderi
 
 ## Cordova
 
-The 2D examples can be deployed to iOS and Android by cordova. All necessary files are within the cordova folder. To run, just use the provides `deploy.sh` script by executing `sh deploy.sh`. 
+The 2D examples can be deployed to iOS and Android by cordova. All necessary files are included in the cordova folder. To run, just use the provides `deploy.sh` script by executing `sh deploy.sh`. 
 It will use gulp for copying the files to the cordova/www folder and then executes `cordova run --device` which will deploy to all connected devices. 
+
+# 3D
+
+This sample shows the planet Earth, surrounded by little stars. You can interact with the sample using mouse or touch input across several platforms and browsers.
+
+## Requirements
+
+* [NodeJS & npm](https://nodejs.org/)
+* Optional: cordova, ionic, xcode, android-sdk, Visual Studio (only if you want to compile the cordova part)
+
+## Run
+
+To run the example, please host the source files in any web server and open `index.html`.
+
+## Cordova
+
+The 3D examples can be deployed to iOS (8+), Android, Windows (8.1+) and Windows Phone (8.1+). All necessary files are included in the cordova folder. To run, just use the provides `deploy.sh` script by executing `sh deploy.sh`. 
+It will use gulp for copying the files to the cordova/www folder and then executes `cordova run --device` which will deploy to all connected devices. 
+
+## Credits
+Earth texture: NASA/Goddard Space Flight Center Scientific Visualization Studio The Blue Marble Next Generation data is courtesy of Reto Stockli (NASA/GSFC) and NASA's Earth Observatory.
 
 # Resources
 
-* http://www.typescriptlang.org/ Typescript
+* http://www.typescriptlang.org/ TypeScript
 * http://gulpjs.com/ Gulp
 * https://cordova.apache.org/ Cordova
+* http://ionicframework.com/docs/ Ionic Framework
 * http://hammerjs.github.io/ Library for touch and gestures
+* http://weblogs.thinktecture.com/christian_liebel/2015/05/enabling-cross-platform-touch-interactions-pointer-vs-touch-events.html Enabling cross-platform touch interactions
 * http://www.html5rocks.com/en/ A lot of tutorials about HTML5
 * http://www.html5rocks.com/en/search?q=canvas Canvas related articles, tutorials, ...
 * http://www.html5rocks.com/en/tutorials/canvas/performance/ Canvas performance
@@ -58,8 +81,19 @@ It will use gulp for copying the files to the cordova/www folder and then execut
 * https://developer.mozilla.org/en-US/docs/Games/Anatomy Good overview about animations and the loop
 * https://gist.github.com/paulirish/1579671 Example for a requestAnimationFrame polyfill
 * http://gafferongames.com/game-physics/fix-your-timestep/ Time based animations
+* http://threejs.org/ three.js
+* https://developer.mozilla.org/de/docs/Web/WebGL WebGL docs in MDN
+* https://msdn.microsoft.com/library/dn479430(v=vs.85).aspx three.js tutorial
+* http://webglstats.com/ WebGL browser support statistics
+* http://codeflow.org/entries/2014/jun/08/some-issues-with-apples-ios-webgl-implementation/ Issues with iOS Web GL implementation
+* https://www.khronos.org/registry/webgl/specs/latest/ WebGL specification
+* https://luic.github.io/WebGL-Performance-Benchmark/ WebGL Performance Benchmark
+* http://www.realtimerendering.com/blog/webgl-debugging-and-profiling-tools/ WebGL Debugging and Profiling tools
+* http://blog.teamtreehouse.com/3d-in-the-browser-webgl-versus-css-3d-transforms WebGL vs. CSS 3D
 
 # Interesting projects
 
 * http://paperjs.org/ Framework for vector based graphics on top of HTML5 Canvas
 * https://playcanvas.com/ HTML5 Game Engine
+* https://chandlerprall.github.io/Physijs/ Physics-Plugin for three.js
+* https://tparisi.github.io/glam/ GLAM.js – GL And Markup
