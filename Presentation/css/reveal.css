@@ -1,3 +1,15 @@
+html body img.tt-logo {
+  border: 0px;
+  background: none;
+  box-shadow: none;
+  margin-bottom: 0;
+}
+
+html body a.tt-link {
+  color: #7094c4;
+  top: -12px;
+}
+
 /*!
  * reveal.js
  * http://lab.hakim.se/reveal-js
