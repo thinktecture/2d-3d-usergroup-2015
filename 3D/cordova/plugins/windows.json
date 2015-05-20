@@ -7,14 +7,23 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-crosswalk-webview": {
-            "PACKAGE_NAME": "cordova"
+        "com.ionic.keyboard": {
+            "PACKAGE_NAME": "blank"
         },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "cordova"
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "blank"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "blank"
         },
         "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "cordova"
+            "PACKAGE_NAME": "blank"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "blank"
+        },
+        "cordova-plugin-crosswalk-webview": {
+            "PACKAGE_NAME": "blank"
         }
     },
     "dependent_plugins": {}

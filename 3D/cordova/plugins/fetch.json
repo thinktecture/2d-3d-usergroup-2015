@@ -1,8 +1,16 @@
 {
-    "cordova-plugin-crosswalk-webview": {
+    "cordova-plugin-device": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-crosswalk-webview"
+            "id": "cordova-plugin-device"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-console": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-console"
         },
         "is_top_level": true,
         "variables": {}
@@ -19,6 +27,22 @@
         "source": {
             "type": "registry",
             "id": "cordova-plugin-splashscreen"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.ionic.keyboard": {
+        "source": {
+            "type": "registry",
+            "id": "com.ionic.keyboard"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-crosswalk-webview": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-crosswalk-webview"
         },
         "is_top_level": true,
         "variables": {}
