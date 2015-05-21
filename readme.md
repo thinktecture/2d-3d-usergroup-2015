@@ -56,10 +56,17 @@ This sample shows the planet Earth, surrounded by little stars. You can interact
 
 To run the example, please host the source files in any web server and open `index.html`.
 
-## Cordova
+## Ionic/Cordova
 
-The 3D examples can be deployed to iOS (8+), Android, Windows (8.1+) and Windows Phone (8.1+). All necessary files are included in the cordova folder. To run, just use the provides `deploy.sh` script by executing `sh deploy.sh`. 
-It will use gulp for copying the files to the cordova/www folder and then executes `cordova run --device` which will deploy to all connected devices. 
+The 3D examples can be deployed to iOS (8+), Android, Windows (8.1+) and Windows Phone (8.1+). All necessary files are included in the cordova folder. To run, follow these steps:
+
+1. Point your terminal to the 3D subfolder
+2. Run `gulp deploy` to copy www content to the cordova folder
+3. Switch to the cordova folder
+4. Add the platforms you wish to deploy for (e.g. `ionic platform add ios`)
+5. Optional: run `ionic browser add crosswalk` to use Crosswalk when targeting Android
+
+After this initial setup, you can run `sh deploy.sh` in the 3D subfolder in order to deploy the app to all connected devices. 
 
 ## Credits
 Earth texture: NASA/Goddard Space Flight Center Scientific Visualization Studio The Blue Marble Next Generation data is courtesy of Reto Stockli (NASA/GSFC) and NASA's Earth Observatory.
@@ -90,6 +97,8 @@ Earth texture: NASA/Goddard Space Flight Center Scientific Visualization Studio 
 * https://luic.github.io/WebGL-Performance-Benchmark/ WebGL Performance Benchmark
 * http://www.realtimerendering.com/blog/webgl-debugging-and-profiling-tools/ WebGL Debugging and Profiling tools
 * http://blog.teamtreehouse.com/3d-in-the-browser-webgl-versus-css-3d-transforms WebGL vs. CSS 3D
+* https://crosswalk-project.org/ Crosswalk: Web Runtime for Android and Cordova apps
+* http://www.w3.org/TR/gamepad/ HTML5 Gamepad Specification
 
 # Interesting projects
 
