@@ -78,7 +78,7 @@ THREE.GamepadControls = function (object) {
         checkButton(pad, padButtons.LEFT_TOP, actions.ROTATE, directions.Z, true, 0.04);
         checkButton(pad, padButtons.RIGHT_TOP, actions.ROTATE, directions.Z, false, 0.04);
         
-        checkAxis(pad, padAxes.LEFT_THUMB_HORIZONTAL, actions.ROTATE, directions.Y, true);
+        checkAxis(pad, padAxes.LEFT_THUMB_HORIZONTAL, actions.ROTATE, directions.Y);
         checkAxis(pad, padAxes.LEFT_THUMB_VERTICAL, actions.ROTATE, directions.X, true);
         checkAxis(pad, padAxes.RIGHT_THUMB_VERTICAL, actions.MOVE, directions.Z, false, 1);
       }
