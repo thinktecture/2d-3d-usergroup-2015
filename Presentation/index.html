@@ -97,10 +97,6 @@
                         <p>
                             <small>From <a href="http://caniuse.com/#search=canvas">http://caniuse.com/#search=canvas</a></small>
                         </p>
-                        
-                        <aside class="notes">
-                            Basic covers all drawing operations.
-                        </aside>
                     </section>
                     <section>
                         <h2>Browser support (overall)</h2>
@@ -108,14 +104,6 @@
                         <p>
                             <small>From <a href="http://caniuse.com/#search=canvas">http://caniuse.com/#search=canvas</a></small>
                         </p>
-                        
-                        <aside class="notes">
-                            <ul>
-                                <li>Text API</li>
-                                <li>WebGL</li>
-                                <li>Canvas blend modes</li>
-                            </ul>
-                        </aside>
                     </section>
                 </section>
                 <section>
@@ -126,10 +114,6 @@
                     <p>
                         <small>From <a href="http://www.sitepoint.com/html5-canvas-tutorial-introduction/">http://www.sitepoint.com/html5-canvas-tutorial-introduction/</a></small>
                     </p>
-                    
-                    <aside class="notes">
-                        People are used to use the cartesian coordinate system. Increasing Y goes up, decreasing down. In canvas space it's flipped: increasing Y goes down, decreasing up.
-                    </aside>
                 </section>
                 <section>
                     <section>
@@ -458,8 +442,7 @@ void putImageData(imagedata, dx, dy);
             				dependencies: [
             					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
             					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-            					{ src: 'plugin/zoom-js/zoom.js', async: true },
-            					{ src: 'plugin/notes/notes.js', async: true }
+            					{ src: 'plugin/zoom-js/zoom.js', async: true }
             				]
             			});
         </script>
