@@ -1,0 +1,27 @@
+{
+  "name": "TTDotNetUserGroupKA3D",
+  "version": "1.0.0",
+  "description": "Examples for the .NET UserGroup in Karlsruhe",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Thinktecture/DotNetUserGroupKA2015"
+  },
+  "keywords": [
+    "3D",
+    "ThreeJS",
+    "Touch",
+    "WebGL",
+    "Gamepad"
+  ],
+  "author": "Christian Liebel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thinktecture/DotNetUserGroupKA2015/issues"
+  },
+  "homepage": "https://github.com/Thinktecture/DotNetUserGroupKA2015",
+  "devDependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.8.11"
+  }
+}
