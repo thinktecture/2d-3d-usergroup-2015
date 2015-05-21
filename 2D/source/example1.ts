@@ -14,7 +14,7 @@ class Example1 {
         this._context = <CanvasRenderingContext2D> canvas.getContext('2d');
     }    
     
-    public draw() {
+    public draw(): void {
         // Begin a new path (creates a new path stack)
         this._context.beginPath();
         

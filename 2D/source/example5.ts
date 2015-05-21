@@ -55,7 +55,7 @@ class Example5 {
         this._context.scale(scaleFactor, scaleFactor);
     }
 
-    public draw() {
+    public draw(): void {
         // Save the canvas context, so we can set our own values
         this._context.save();
         
