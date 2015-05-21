@@ -89,8 +89,10 @@
                                 </td>
                                 <td>
                                     <ul>
-                                        <li>Overview</li>
-                                        <li>API</li>
+                                        <li>Overview<br/>
+                                        <small>Basics</small></li>
+                                        <li>WebGL & three.js<br/>
+                                        <small>Browser support, controls</small></li>
                                         <li>Examples</li>
                                     </ul>
                                 </td>
@@ -434,14 +436,140 @@ void putImageData(imagedata, dx, dy);
                     </p>
                 </section>
                 <section>
+                    <h2><span style="color:hotpink;">3D</span> Content<br/>in a <span style="color:hotpink;">3D</span> world<br/>with <span style="color:lime;">2D</span> screens</h2>
+                    <p>scenes, cameras, rendering</p>
+                </section>
+                <section>
+                    <h2>Coordinate System</h2>
+                    <p>Right-handed</p>
+                    <img src="images/3d-coordinate-system.png" />
+                    <p>
+                        <small>From <a href="https://msdn.microsoft.com/library/dn479430(v=vs.85).aspx">https://msdn.microsoft.com/library/dn479430(v=vs.85).aspx</a></small>
+                    </p>
+                </section>
+                <section>
+                    <h2>Camera Frustum</h2>
+                    <img src="images/camera-frustum.png" />
+                    <p>
+                        <small>From <a href="https://msdn.microsoft.com/library/dn479430(v=vs.85).aspx">https://msdn.microsoft.com/library/dn479430(v=vs.85).aspx</a></small>
+                    </p>
+                </section>
+                <section>
+                    <section>
+                        <h2>WebGL</h2>
+                        <ul>
+                            <li>Web Graphics Library</li>
+                            <li>Hardware accelerated (GPU)</li>
+                            <li>New canvas rendering context <code>webgl</code></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Proven Technology</h2>
+                        <ul>
+                            <li>Based on OpenGL for Embedded Systems</li>
+                            <li>Blender & Unity can export to WebGL</li>
+                            <li>ANGLE (Chrome/Firefox): Rendering on Direct3D</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>three.js</h2>
+                        <ul>
+                            <li>Native WebGL <em>is</em> complex</li>
+                            <li>Open-source JavaScript library</li>
+                            <li>High-level API abstracting WebGL (and more)</li>
+                        </ul>
+                    </section>                    
+                    <section>
+                        <h2>Structure</h2>
+                        <ul>
+                            <li>Geometry: shape (cube, sphere, …)</li>
+                            <li>Material: color, texture, light reflection</li>
+                            <li>Mesh: 3D object (geometry + material)</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <h2>Browser support</h2>
+                    <img src="images/browsersupport-webgl.jpg" />
+                    <p>
+                        <small>From <a href="http://caniuse.com/#search=webgl">http://caniuse.com/#search=webgl</a></small>
+                    </p>
+                </section>
+                <section>
+                    <h2>Platform support</h2>
+                    <ul>
+                        <li>iOS 8+</li>
+                        <li>Android</li>
+                        <ul>
+                            <li>WebView 36+</li>
+                            <li>Crosswalk</li>
+                        </ul>
+                        <li>Windows (Phone) 8.1+</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <h2>Controls</h2>
+                        <ul>
+                            <li>Mouse/Keyboard</li>
+                            <li>Touch</li>
+                            <li>Gamepad</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>A word on touch events…</h2>
+                        <ul>
+                            <li>Pointer Events vs. Touch Events</li>
+                            <li>Browser support varies on desktop</li>
+                            <li>three.js controls only support Touch Events</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>A word on gamepads…</h2>
+                        <ul>
+                            <li>HTML5 Gamepad API</li>
+                            <li>Polling (requestAnimationFrame)</li>
+                            <li>Supported by Chrome, Firefox, MS Edge, Opera</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <h2>The Creation of the World</h2>
+                </section>
+                <section>
+                    <h2>Even more samples…</h2>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img src="images/flight-arcade.jpg" />
+                                    <p><a href="http://www.flightarcade.com">Flight Arcade</a></p>
+                                </td>
+                                <td>
+                                    <img src="images/physijs.jpg" /><br/>
+                                    <p><a href="https://chandlerprall.github.io/Physijs/">Physijs</a></p>
+                                </td>
+                                <td>
+                                    <img src="images/threejs-sample.jpg" /><br/>
+                                    <p><a href="http://threejs.org/">three.js samples</a></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
                     <h1>Summary</h1>
                     <ul>
                         <li>Cross platform high-performance graphic manipulation</li>
                         <li>2D &amp; 3D</li>
                         <li>Hardware acceleration</li>
                         <li>Supported by all major browsers</li>
+                        <li>Touch-enabled, gamepad-enabled</li>
                     </ul>
                 </section>
+                
                 <section>
                     <h1>Thank you!</h1>
                     <p>
@@ -458,6 +586,7 @@ void putImageData(imagedata, dx, dy);
                         <li>GitHub repository: <a href="https://github.com/thinktecture/DotNetUserGroupKA2015">https://github.com/thinktecture/DotNetUserGroupKA2015</a></li>
                         <li>Canvas browser support: <a href="http://caniuse.com/#search=canvas">http://caniuse.com/#search=canvas</a></li>
                         <li>Cordova: <a href="https://cordova.apache.org/">https://cordova.apache.org/</a></li>
+                        <li>Ionic: <a href="http://ionicframework.com/">http://ionicframework.com/</a></li>
                         <li>Gulp: <a href="http://gulpjs.com">http://gulpjs.com</a></li>
                         <li>TypeScript: <a href="http://www.typescriptlang.org/">http://www.typescriptlang.org/</a></li>  
                         <li>CanvasRenderingContext2D: <a href="https://developer.mozilla.org/en/docs/Web/API/CanvasRenderingContext2D">https://developer.mozilla.org/en/docs/Web/API/CanvasRenderingContext2D</a></li>

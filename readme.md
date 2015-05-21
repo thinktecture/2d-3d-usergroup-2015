@@ -98,6 +98,7 @@ Earth texture: NASA/Goddard Space Flight Center Scientific Visualization Studio 
 * http://www.realtimerendering.com/blog/webgl-debugging-and-profiling-tools/ WebGL Debugging and Profiling tools
 * http://blog.teamtreehouse.com/3d-in-the-browser-webgl-versus-css-3d-transforms WebGL vs. CSS 3D
 * https://crosswalk-project.org/ Crosswalk: Web Runtime for Android and Cordova apps
+* http://www.w3.org/TR/gamepad/ HTML5 Gamepad Specification
 
 # Interesting projects
 
