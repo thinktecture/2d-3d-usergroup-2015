@@ -27,7 +27,7 @@ class Example2 {
         this._circleRadius = 50;
     }
 
-    public draw() {
+    public draw(): void {
         // Save the canvas context, so we can set our own values
         this._context.save();
         
