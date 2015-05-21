@@ -5,9 +5,31 @@ html body img.tt-logo {
   margin-bottom: 0;
 }
 
+html body img.portrait {
+    border: 0px;
+    background: none;
+    box-shadow: none;
+   margin-bottom: 0;
+   margin-top: 0px;
+   margin-right: 10px;
+}
+
+html body img.twitter {
+    border: 0px;
+    background: none;
+    box-shadow: none;
+   margin-bottom: 0;
+   margin-top: 0px;
+   margin-right: 10px;
+}
+
 html body a.tt-link {
   color: #7094c4;
   top: -12px;
+}
+
+html body table.narrow {
+  font-size: 85%;
 }
 
 /*!
