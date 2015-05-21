@@ -83,6 +83,7 @@
                 <section>
                     <h2>Overview</h2>
                     <ul>
+                        <li>Plain bitmap for the web</li>
                         <li>Cross platform graphic manipulations</li>
                         <li>High performance</li>
                         <li>Mouse &amp; touch support</li>
@@ -310,8 +311,8 @@ void putImageData(imagedata, dx, dy);
                             <li>As the name suggests: Only one frame is requested. <code>requestAnimationFrame</code> has to be called within the callback to get a 
                             animation loop.</li>
                             <li>You don't know, when the callback will be executed.</li>
-                            <li>Animations on the same page, where one is in the visible area and one not, will not run synchronously since the hidden one will not be
-                                animated.
+                            <li>Animations on the same page, where one is in the visible area and one not, will not run synchronously since the hidden one's <code>requestAnimationFrame</code> will not be
+                                called.
                             </li>
                         </ul>
                         <p>
