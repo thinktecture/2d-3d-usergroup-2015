@@ -19,7 +19,7 @@ class Demo {
           this._width = canvas.width;
           this._height = canvas.height;
 
-          this.adjustForRetina();
+          //this.adjustForRetina();
           this.assignEvents();
           this.startAnimation();
      }
@@ -41,29 +41,12 @@ class Demo {
 
      private assignEvents(): void {
           var that = this;
-          
-          this._canvas.addEventListener('mousemove', function(event: MouseEvent) {
-               that._x = event.layerX;
-               that._y = event.layerY;
-          });
-          
-          this._canvas.addEventListener('touchmove', function(event: TouchEvent) {
-               that._x = event.touches[0].clientX;
-               that._y = event.touches[0].clientY;
-          });
+          // todo
      }
 
      private startAnimation(): void {
           var that = this;
-
-          var step = function() {
-               that.calculateNewPosition();
-               that.draw();
-               
-               window.requestAnimationFrame(step);
-          }
-          
-          window.requestAnimationFrame(step);
+          // todo
      }
 
      private calculateNewPosition(): void {
@@ -75,7 +58,6 @@ class Demo {
                this._vy *= -1;
           }
 
-          var test = "";          
           this._x += this._vx;
           this._y += this._vy;
      }
@@ -83,15 +65,6 @@ class Demo {
      public draw(): void {
           var c: CanvasRenderingContext2D = this._context;
           
-          c.clearRect(0, 0, this._width, this._height
-              );
-          
-          c.fillRect(10, 10, 100, 100);
-          
-          c.beginPath();
-          c.arc(this._x, this._y, 50, 0, 2 * Math.PI);
-          c.closePath();
-          c.fill();
-          //c.stroke();
+          // todo: draw nice rectangles!
      }
 }
