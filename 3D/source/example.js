@@ -1,6 +1,3 @@
-/* global Stats */
-/* global THREE */
-
 (function () {
 	
 	var container, camera, scene, renderer, controls, stats;
