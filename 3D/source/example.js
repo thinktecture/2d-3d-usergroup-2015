@@ -14,7 +14,7 @@
 		container = document.getElementById('container');
 		
 		camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 1, 500);
-		camera.position.set(0, 0, -30);
+		camera.position.set(0, 0, 30);
 		
 		scene = new THREE.Scene();
 		
@@ -24,20 +24,20 @@
 			var geometry = new THREE.SphereGeometry(5, 32, 32);
 			var material = new THREE.MeshLambertMaterial({map: texture});
 			var sphere = new THREE.Mesh(geometry, material);
-			sphere.rotation.y = -30;
+			sphere.rotation.y = 250 * Math.PI / 180;
 			scene.add(sphere);
 		});
 		
 		// Lights
-		var ambientLight = new THREE.AmbientLight(0xaaaaaa);
+		var ambientLight = new THREE.AmbientLight(0x999999);
 		scene.add(ambientLight);
 		
-		var spotLight = new THREE.SpotLight(0xffffff);
-		spotLight.position.set(0, 0, -500);
+		var spotLight = new THREE.PointLight(0xffffff);
+		spotLight.position.set(0, 0, 500);
 		scene.add(spotLight);
 		
 		// Stars
-		var starsCount = 250;
+		var starsCount = 2500;
 		var stars = new THREE.Geometry();
 		var starMaterial = new THREE.PointCloudMaterial({color: 0xffffff});
 		
