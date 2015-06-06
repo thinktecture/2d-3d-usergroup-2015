@@ -1,6 +1,6 @@
-# .NET UserGroup Karlsruhe 2D & 3D Examples
+# .NET UserGroup 2D & 3D Examples
 
-This repository contains the examples shown in .NET UserGroup Karlsruhe. 
+This repository contains the examples shown in .NET User Group talks. 
 
 # 2D
 
