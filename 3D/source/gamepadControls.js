@@ -35,7 +35,7 @@ THREE.GamepadControls = function (object) {
   reset();
   
   function reset() {
-    object.position.set(0, 0, -30);
+    object.position.set(0, 0, 30);
     lookAtOrigin();
   }
   
