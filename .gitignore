@@ -79,7 +79,7 @@ crashlytics.properties
 crashlytics-build.properties
 
 typings/
-dist/
+# dist/
 
 # Cordova
 2D/cordova/www
