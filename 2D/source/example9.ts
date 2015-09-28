@@ -1,6 +1,9 @@
 /// <reference path="../typings/tsd.d.ts" />
 /// <reference path="example9_arc.ts" />
 
+/**
+ * Rotating Pie Chart with MouseHover and TouchMove
+ */
 class Example9 {
     private _canvas: HTMLCanvasElement;
     private _context: CanvasRenderingContext2D;
@@ -77,15 +80,80 @@ class Example9 {
         var that = this;
 
         that._canvas.addEventListener('mousemove', event => {
-            that.processMove(event.layerX, event.layerY);
+            event.preventDefault();
+            that.handleMouseMove(event.layerX, event.layerY);
+        });
+
+        that._canvas.addEventListener('click', event => {
+            event.preventDefault();
+            that.toggleAnimation();
+        });
+
+        that._canvas.addEventListener('touchstart', event => {
+            event.preventDefault();
+            that.toggleAnimation();
+        });
+
+        that._canvas.addEventListener('touchmove', event => {
+            event.preventDefault();
+            console.log('touchmove');
+            that.handleTouchMoveEvent(<TouchEvent>event);
         });
     }
 
-    private processMove(x: number, y: number): void {
+    private toggleAnimation(): void {
+        if (this._animationFrame) {
+            return this.stopAnimation();
+        }
+
+        this.startAnimation();
+    }
+    
+    /**
+     * Returns the correct positions of an event (mouse/touch)
+     * 
+     * See: http://stackoverflow.com/a/10816667/959687
+     */
+    private getOffset(event: any): any {
+        var el = event.target,
+            x = 0,
+            y = 0;
+
+        while (el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)) {
+            x += el.offsetLeft - el.scrollLeft;
+            y += el.offsetTop - el.scrollTop;
+            el = el.offsetParent;
+        }
+
+        x = event.clientX - x;
+        y = event.clientY - y;
+
+        return { x: x, y: y };
+    }
+
+    private handleTouchMoveEvent(e: TouchEvent): void {
+        var that = this;
+        
+        // .touches is an array containing one or more touch points for multi-touch scenarios
+        
+        console.log(e.touches[0]);
+        var position = this.getOffset(e.touches[0]);
+
+        this._pieParts.forEach(part => {
+            part.centerX = position.x;
+            part.centerY = position.y;
+        });
+        
+        window.requestAnimationFrame(() => {
+            that.draw();
+        });
+    }
+
+    private handleMouseMove(x: number, y: number): void {
         var that = this;
         var factor = this.getDevicePixelRatio();
         var color = this._context.getImageData(x * factor, y * factor, 1, 1).data;
-        
+
         this._pieParts.forEach(part => {
             if (part.color[0] === color[0] || part.color[0] === color[0] - 1 || part.color[0] === color[0] + 1) {
                 part.alpha = 0.5;
@@ -114,9 +182,10 @@ class Example9 {
 
         that._animationFrame = window.requestAnimationFrame(animationframeCallback);
     }
-    
+
     public stopAnimation(): void {
         window.cancelAnimationFrame(this._animationFrame);
+        this._animationFrame = undefined;
     }
 
     public draw(): void {
