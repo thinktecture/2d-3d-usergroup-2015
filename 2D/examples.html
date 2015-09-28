@@ -42,7 +42,8 @@
                 example5: Example5,
                 example6: Example6,
                 example7: Example7,
-                example8: Example8
+                example8: Example8,
+                example9: Example9
             };
             
             /**
@@ -54,8 +55,16 @@
             var ctor = examples[exampleSelection];
             
             if (ctor) {
-                var example = new ctor(exampleCanvas);
-                 
+                var example;
+                
+                if (ctor === Example9) {
+                    example = new ctor(exampleCanvas, [10, 30, 25, 10, 25]);    
+                    example.startAnimation();    
+                }
+                else {
+                     example = new ctor(exampleCanvas);
+                }
+                
                 example.draw();
                 
                 // For animations
