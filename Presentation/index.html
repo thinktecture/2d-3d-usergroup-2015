@@ -34,7 +34,7 @@
                     <h1>2D &amp; 3D visualizations</h1>
                     <h3>Cross platform, touch optimized</h3>
                     <p>
-                        <small>Christian Liebel, Christian Weyer, Manuel Rauber</small>
+                        <small>Christian Liebel, Manuel Rauber</small>
                     </p>
                     <p><img src="images/ttLogo.png" style="width: 15%" class="tt-logo" /><br/>
                     <small><a href="http://thinktecture.com" class="tt-link">thinktecture.com</a></small></p>
@@ -45,7 +45,6 @@
                         <thead>
                             <tr>
                                 <th style="text-align: center"><img src="images/cl.png" class="portrait" /><br/>Christian Liebel</th>
-                                <th style="text-align: center"><img src="images/dealwithit.png" class="portrait" /><br/>Christian Weyer</th>
                                 <th style="text-align: center"><img src="images/mr.png" class="portrait" /><br/>Manuel Rauber</th>
                             </tr>
                         </thead>
@@ -54,10 +53,6 @@
                                 <td>
                                     <p><small>christian.liebel@thinktecture.com</small>
                                     <p><small>@chris_liebel</small></p>
-                                </td>
-                                <td>
-                                    <p><small>christian.weyer@thinktecture.com</small></p>
-                                    <p><small>@christianweyer</small></p>
                                 </td>
                                 <td>
                                     <p><small>manuel.rauber@thinktecture.com</small></p>
@@ -272,15 +267,17 @@ void putImageData(imagedata, dx, dy);
                 <section>
                     <h2>Animations</h2>
                     <h3>The old way</h3>
+                    <div class="fragment">
                     <p>setTimeout</p>
-                    <pre class="fragment"><code data-trim contenteditable>function draw() {
+                    <pre><code data-trim contenteditable>function draw() {
     // draw routine
     setTimeout(draw, 1000/60);
-}</code></pre>
+}</code></pre></div>
+<div class="fragment">
                     <p>setInterval</p>
-                    <pre class="fragment"><code data-trim contenteditable>setInterval(function () {
+                    <pre><code data-trim contenteditable>setInterval(function () {
     // draw routine            
-}, 1000/60);</code></pre>
+}, 1000/60);</code></pre></div>
                 </section> 
                <section>
                    <section>
@@ -396,6 +393,7 @@ void putImageData(imagedata, dx, dy);
                             <li>Mouse Move</li>
                             <li>Touch Move</li>
                             <li>Manipulating a rectangle with HammerJS</li>
+                            <li>Rotating Pie Chart</li>
                         </ol>
                     </section>
                     <section>
