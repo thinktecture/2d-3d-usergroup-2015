@@ -13,25 +13,13 @@
     
     <body>
         <h1>Demo</h1>
-        <canvas id="demo" width="400" height="500"></canvas><br/>
-        <button id="startButton">Start Animation</button>
-        <button id="stopButton">Stop Animation</button>
+        <canvas id="demo" width="400" height="500"></canvas>
         <script src="dist/lib.js"></script>
         <script>
             var canvas = document.getElementById('demo');
             
             var demo = new Demo(canvas, [10, 10, 30, 30, 20]);
             demo.draw();
-            
-            var startButton = document.getElementById('startButton');
-            startButton.addEventListener('click', function () {
-                demo.startAnimation(); 
-            });
-            
-            var stopButton = document.getElementById('stopButton');
-            stopButton.addEventListener('click', function() {
-                demo.stopAnimation();
-            });
         </script>
     </body>
 </html>
