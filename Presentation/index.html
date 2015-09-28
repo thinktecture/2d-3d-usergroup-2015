@@ -10,7 +10,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
         <link rel="stylesheet" href="css/reveal.css">
-        <link rel="stylesheet" href="css/theme/black.css" id="theme">
+        <link rel="stylesheet" href="css/theme/white.css" id="theme">
         <!-- Code syntax highlighting -->
         <link rel="stylesheet" href="lib/css/zenburn.css">
         <!-- Printing and PDF exports -->
@@ -24,13 +24,29 @@
         <!--[if lt IE 9]>
             <script src="lib/js/html5shiv.js"></script>
         <![endif]-->
+        <style>
+            .reveal {
+               background-image: url('images/basta-footer.png'); 
+               background-position: center bottom;
+               background-repeat: no-repeat;
+               background-size: contain;
+            }
+          
+            .frontpage > * {
+                visibility: hidden;
+            }
+            
+            .reveal .controls {
+                bottom: 75px;
+            }
+        </style>
     </head>
     
     <body>
         <div class="reveal">
             <!-- Any section element inside of this container is displayed as a slide -->
             <div class="slides">
-                <section>
+                <section class="frontpage" data-background="images/basta-background.png">
                     <h1>2D &amp; 3D visualizations</h1>
                     <h3>Cross platform, touch optimized</h3>
                     <p>
@@ -39,6 +55,10 @@
                     <p><img src="images/ttLogo.png" style="width: 15%" class="tt-logo" /><br/>
                     <small><a href="http://thinktecture.com" class="tt-link">thinktecture.com</a></small></p>
                 </section>
+                <section>
+                    <h3>Special Day &quot;HTML5 Cross-Plattform&quot;</h3>
+                    <img src="images/overview.png" class="strech" />
+                </section>    
                 <section>
                     <h2>Introduction</h2>
                     <table class="narrow">
@@ -591,6 +611,9 @@ void putImageData(imagedata, dx, dy);
                         <li>WebGLRenderingContext: <a href="https://developer.mozilla.org/en/docs/Web/API/WebGLRenderingContext">https://developer.mozilla.org/en/docs/Web/API/WebGLRenderingContext</a></li>
                         <li>requestAnimationFrame: <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame">https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame</a></li>  
                     </ul></small>
+                </section>
+                <section>
+                    <img src="images/entwicklerspezial.png" class="entwicklerspezial" />    
                 </section>
             </div>
         </div>
